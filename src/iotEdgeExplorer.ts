@@ -5,7 +5,6 @@
 import axios from "axios";
 import * as iothub from "azure-iothub";
 import * as fs from "fs";
-import * as os from "os";
 import * as path from "path";
 import * as stripJsonComments from "strip-json-comments";
 import * as vscode from "vscode";

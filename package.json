@@ -177,7 +177,7 @@
       },
       {
         "command": "azure-iot-toolkit.setupIotedgehubdev",
-        "title": "Setup iotedgehubdev",
+        "title": "Setup IoT Edge Simulator",
         "category": "Azure IoT Edge"
       },
       {
