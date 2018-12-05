@@ -67,11 +67,28 @@
   ],
   "main": "./out/src/extension",
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "azure",
+          "title": "Azure",
+          "icon": "resources/azure.svg"
+        }
+      ]
+    },
     "views": {
-      "explorer": [
+      "azure": [
         {
           "id": "iotHubDevices",
-          "name": "Azure IoT Hub Devices"
+          "name": "IoT Hub Devices",
+          "when": "config.azure-iot-toolkit.showInExplorer == false"
+        }
+      ],
+      "explorer": [
+        {
+          "id": "iotHubDevices_explorer",
+          "name": "Azure IoT Hub Devices",
+          "when": "config.azure-iot-toolkit.showInExplorer == true"
         }
       ]
     },
@@ -601,6 +618,11 @@
           "type": "number",
           "default": 60,
           "description": "Time interval in seconds for tree view auto refresh, auto refresh has to be enabled for it to work."
+        },
+        "azure-iot-toolkit.showInExplorer": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show IoT Toolkit in explorer view instead of the Azure view"
         }
       }
     },

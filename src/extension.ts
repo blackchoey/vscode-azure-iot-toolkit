@@ -20,6 +20,7 @@ export function activate(context: vscode.ExtensionContext) {
     let deviceTree = new DeviceTree(context);
 
     vscode.window.registerTreeDataProvider("iotHubDevices", deviceTree);
+    vscode.window.registerTreeDataProvider("iotHubDevices_explorer", deviceTree); // This is a workaround
     azureIoTExplorer.checkAndShowWelcomePage();
 
     context.subscriptions.push(vscode.languages.registerCodeLensProvider({ pattern: `**/${Constants.ModuleTwinJosnFileName}` }, new ModuleTwinCodeLensProvider()));
